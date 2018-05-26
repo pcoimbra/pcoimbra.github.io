@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+
+body {
+    padding: 40px 0;
+    background-color: #eee;
+}
+
+div.container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+div.chromeframe {
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    color: #000;
+    clear: both;
+    padding: 15px 0 15px 0;
+    text-align: center;
+    position: fixed;
+}
+
+#mainForm {
+    width: 400px;
+    padding: 19px 29px 0;
+    margin: 0 auto 20px auto;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+       -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-size: 0.8em;
+    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 0%;
+}
+
+h3 {
+    margin-top: -10px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+h1 + p {
+    text-align: center;
+    margin-bottom: 1.75em;
+}
+
+div.controls.input-append, div.controls.input-prepend {
+    margin-left: 21px;
+}
+
+input.align-right {
+    text-align: right;
+}
+
+input.content-pended {
+    width: 178px;
+}
+
+.coming-soon {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.form-actions {
+    background-color: inherit;
+}
+
+#output {
+    max-width: 400px;
+    padding: 24px 29px 19px;
+    margin: -25px auto 20px auto;
+    color: #f0f0f0;
+    opacity: 0;
+    position: relative;
+    z-index: -10;
+    background-color: #333; /* Fallback if the image can't load */
+    background-image: url('black_bg.png');
+    background-repeat: repeat;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+       -moz-border-radius-bottomright: 5px;
+       -moz-border-radius-bottomleft: 5px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+       -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+div#output div.price {
+    font-family: 'Droid Sans Mono', sans-serif;
+    font-size: 4em;
+    text-align: center;
+    line-height: 100%;
+    color: #fff;
+    text-shadow: 0 0 5px #000;
+}
+
+span.more-digits {
+    opacity: 0.2;
+}
+
+table.details {
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+.row {
+    text-align: center;
+}
+
+.disclaimer {
+    display: block;
+    margin: 0 auto 2em auto;
+    width: 400px;
+    color: #999;
+    font-size: 10px;
+}

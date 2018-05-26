@@ -1,1 +1,120 @@
-Hello world, it's ok?
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Black-Scholes Calculator. Easily calculate the theoretical price of a vanilla call or put option.</title>
+    <meta name="description" content="A simple Black-Scholes calculator">
+    <meta name="keywords" content="Black Scholes, Black-Scholes, Black Scholes calculators, options pricing, option price, call option, put option, vanilla option, european option, american option">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--[if IE]>
+        <div class="chromeframe">Sorry, this website does not support Internet Explorer. Please use a <a href="http://browsehappy.com/">different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</div>
+    <![endif]-->
+    <div class="container">
+        <form class="form-horizontal" id="mainForm">
+            <h1>Black-Scholes Calculator</h1>
+            <p>A straightforward Black-Scholes calculator that also gives you the intermediate steps like d<sub>1</sub>,&nbsp;d<sub>2</sub>, and the cumulative&nbsp;normal&nbsp;distribution values.</p>
+            <h2>Created by <a href="https://billmei.net" target="_blank">Bill Mei</a></h2>
+            <hr>
+            <div class="control-group">
+                <label class="control-label">Option Flavour</label>
+                <div class="controls">
+                    <label class="radio">
+                    <input type="radio" name="optionFlavours" id="european" value="european" checked>
+                        European
+                    </label>
+                    <label class="radio">
+                    <input type="radio" name="optionFlavours" id="american" value="american" disabled>
+                        <span class="coming-soon">American</span> Coming soon
+                    </label>
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="type" class="control-label">Option Type</label>
+                <div class="controls">
+                    <label class="radio">
+                    <input type="radio" name="optionTypes" id="call" value="call" checked>
+                        Call
+                    </label>
+                    <label class="radio">
+                    <input type="radio" name="optionTypes" id="put" value="put">
+                        Put
+                    </label>
+                    <!-- <label class="radio">
+                    <input type="radio" name="optionTypes" id="both" value="both">
+                        Both
+                    </label> -->
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="strike" class="control-label">Strike Price</label>
+                <div class="controls input-prepend">
+                    <span class="add-on">$</span>
+                    <input type="text" id="strike" name="strike" placeholder="0.00" class="content-pended">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="priceunderlying" class="control-label">Price of Underlying</label>
+                <div class="controls input-prepend">
+                    <span class="add-on">$</span>
+                    <input type="text" id="priceunderlying" name="priceunderlying" placeholder="0.00" class="content-pended">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="expiretime" class="control-label">Time to Expiration</label>
+                <div class="controls">
+                    <input type="text" id="expiretime" name="expiretime" placeholder="number of days" title="E.g. 1 year = 365 days">
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="volatility" class="control-label">Volatility of Underlying</label>
+                <div class="controls input-append">
+                    <input type="text" id="volatility" name="volatility" class="content-pended align-right" placeholder="standard deviation" title="Enter the percent, not the raw number.">
+                    <span class="add-on">%</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="dividend" class="control-label">Dividend Yield</label>
+                <div class="controls input-append">
+                    <input type="text" id="dividend" name="dividend" class="content-pended align-right" placeholder="enter 0 if no dividend" title="Enter the percent, not the raw number.">
+                    <span class="add-on">%</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label for="riskfree" class="control-label">Risk-Free Interest Rate</label>
+                <div class="controls input-append">
+                    <input type="text" id="riskfree" name="riskfree" class="content-pended align-right" placeholder="0" title="Enter the percent, not the raw number.">
+                    <span class="add-on">%</span>
+                </div>
+            </div>
+            <div class="form-actions">
+                <a href="javascript:void(0);" class="btn btn-primary" id="calculate">Calculate</a>
+                <a href="javascript:void(0);" class="btn" id="reset">Reset Form</a>
+            </div>
+        </form>
+        <div id="output"></div>
+
+        <div class="row">
+            <p class="disclaimer">This tool is created for academic purposes, please don't make investment decisions based on the information provided here.</p>
+            <p class="disclaimer">Only a fool would actually trade based on the Black-Scholes formula.</p>
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="jquery-1.9.1.min.js"><\/script>')</script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+    <script type="text/javascript" src="jstat-0.1.0.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-XXXXX - XX', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+</body>
+</html>
