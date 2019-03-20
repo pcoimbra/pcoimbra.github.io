@@ -1,11 +1,80 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Home</title>
-        <link rel="stylesheet" media="screen, print, handheld" type="text/css" href="calc.css" />
-    </head>
-    <body>
-        <a href="https://pcoimbra.github.io/calc/calculadora.html">Calculadora</a>
-    </body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Compound Interest</title>
+</head>
+<body>
+<h1>Compound Interest</h1>
+
+<form name="CompoundInterest" method="post">
+    <table>
+        <tr>
+            <td><label for="principal" style="font-weight: 600;">Principal:</label></td>
+            <td><input type="number"
+                       class="principal" style="width: 80px" /></td>
+        </tr>
+        <tr>
+            <td><label for="interestRate" style="font-weight: 600;">Interest Rate:</label></td>
+            <td><input type="number" class="interestRate"
+                       style="width: 60px" />%</td>
+        </tr>
+        <tr>
+            <td><label for="periods" style="font-weight: 600;">Periods:</label></td>
+            <td><input type="number" class="periods" style="width: 80px" />
+                <select  class="frequency">
+                    <option>Years</option>
+                    <option>Months</option>
+                    <option>Days</option>
+                </select></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="button" value="Calculate"
+                       class="calculate" style="width: 80px" /></td>
+        </tr>
+        <tr>
+            <td><label for="interestAmount" style="font-weight: 600;">Interest Amount:</label></td>
+            <td><input type="number" class="interestAmount"
+                       style="width: 80px" />
+            </td>
+        </tr>
+        <tr>
+            <td><label for="futureValue" style="font-weight: 600;">Future Value:</label></td>
+            <td><input type="number" class="futureValue"
+                       style="width: 80px" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+<script>
+    var princ = document.querySelector('.principal');
+    var iRate = document.querySelector('.interestRate');
+    var per = document.querySelector('.periods');
+    var iAmount = document.querySelector('.interestAmount');
+    var future = document.querySelector('.futureValue');
+    var frequency = document.querySelector('.frequency');
+    var selected = document.querySelector('select');
+    var btnCalc = document.querySelector('.calculate');
+
+    var para = document.querySelector('p');
+ 	btnCalc.addEventListener('click', function () {
+        if (selected.value == 'Years') {
+            interest = princ.value * iRate.value * per.value / 100.00;
+        }
+        if (selected.value == 'Months') {
+            interest = princ.value * (iRate.value / 100.00) * (per.value / 12);
+        }
+        if (selected.value == 'Days') {
+            interest = princ.value * (iRate.value / 100.00) * (per.value / 360);
+        }
+
+        var total = Number(princ.value) + interest;
+
+        future.value = total;
+        iAmount.value = interest;
+    });
+</script>
+</body>
 </html>
